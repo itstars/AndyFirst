@@ -1,4 +1,4 @@
-package cn.andy;
+package cn.andy.lockUtil;
 
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
@@ -16,8 +16,7 @@ public class semaphoreDemo {
             new Thread(()->{
                 try {
                     semaphore.acquire(); //抢占一个资源
-                    System.out.println("*******************************"+Thread.currentThread().getName()+"号车驶入，" +
-                            "剩余"+semaphore.availablePermits()+"个车位可用。");
+                    System.out.println("*******************************"+Thread.currentThread().getName()+"号车驶入。");
                     TimeUnit.SECONDS.sleep(5);
                 } catch (InterruptedException e) {
                     e.printStackTrace();

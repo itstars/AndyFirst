@@ -1,4 +1,4 @@
-package cn.andy;
+package cn.andy.lockUtil;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -11,7 +11,7 @@ public class CountDownLatchDemo {
     public static void main(String[] args) {
         try {
             CountDownLatch latch = new CountDownLatch(6);
-            for (int i = 1; i <=6; i++) {  //其他6个线程
+            for (int i = 1; +i <=6; i++) {  //其他6个线程
                 new Thread(()->{
                     System.out.println(""+Thread.currentThread().getName()+"号选手已到终点。");
                     latch.countDown();

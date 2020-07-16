@@ -1,4 +1,4 @@
-package cn.andy;
+package cn.andy.lockUtil;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
