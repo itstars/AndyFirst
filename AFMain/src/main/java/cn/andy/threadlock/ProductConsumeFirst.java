@@ -1,11 +1,13 @@
-package cn.andy.lock;
+package cn.andy.threadlock;
 
 /**
- * @Description Object的notify和wait
+ * @Description 初级消费生产者模式
+ * 采用同步代码块synchronized 及 利用 Object的notify和wait实现
  * @Author zhangheng
- * @Date 2020/7/16 14:38
+ * @Date 2020/7/17 11:02
  */
-public class WaitAndNotifyDemo {
+public class ProductConsumeFirst {
+
     public static void main(String[] args) {
         MethodClass methodClass = new MethodClass();
         Thread t1 = new Thread(() -> {
