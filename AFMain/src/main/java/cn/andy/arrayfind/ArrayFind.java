@@ -16,7 +16,7 @@ public class ArrayFind {
         binarySearch(findNums,numbers);
     }
     /**
-     * 二分法查找：前提 必须先排好序
+     * 二分法查找：前提 必须先排好序   Arrays.binarySearch()
      */
     private static void binarySearch(int findNums, int[] numbers) {
         Arrays.sort(numbers);
