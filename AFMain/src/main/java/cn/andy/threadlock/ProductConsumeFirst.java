@@ -51,12 +51,14 @@ class MethodClass {
         while (true) {
             System.out.println(Thread.currentThread().getName() + ":::run:::" + productCount);
             Thread.sleep(1000);
-            if (productCount >= MAX_COUNT) {
+            //判断执行当前方法线程何时阻塞 何时唤醒其他线程-- 建议使用while 不用if 防止虚假唤醒 多个生成消费争抢出现错误
+            while (productCount >= MAX_COUNT) {
+
                 System.out.println("货舱已满,不必再生产。");
                 wait();
-            }else {
-                productCount++;
             }
+            productCount++;
+
             notifyAll();
         }
     }
@@ -65,12 +67,13 @@ class MethodClass {
         while (true) {
             System.out.println(Thread.currentThread().getName() + ":::run:::" + productCount);
             Thread.sleep(1000);
-            if (productCount <= 0) {
+            //建议使用while 不用if 防止虚假唤醒 多个生成消费争抢出现错误
+            while (productCount <= 0) {
                 System.out.println("货舱已无货...无法消费");
                 wait();
-            }else {
-                productCount--;
             }
+            productCount--;
+
             notifyAll();
         }
     }

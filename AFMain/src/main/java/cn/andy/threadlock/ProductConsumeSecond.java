@@ -40,7 +40,7 @@ public class ProductConsumeSecond {
 
 class BreadShop{
     private volatile boolean flag = true;
-    private int breadNum= 10; //货架容量
+    private int breadNum= 10; //货架容量  标志位
     private Lock lock = new ReentrantLock();
     Condition product = lock.newCondition();
     Condition sale = lock.newCondition();
